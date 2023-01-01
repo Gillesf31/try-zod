@@ -11,12 +11,12 @@ const invalidUser = { username: 123};
 const user: User = { username: "Gilles"};
 
 // Valid user
-console.log(UserSchema.parse(validUser));
+console.log(UserSchema.safeParse(validUser));
 
-// Invalid user // Uncomment to see error
-// console.log(UserSchema.parse(invalidUser));
+//  No broken code with safeParse
+console.log(UserSchema.safeParse(invalidUser));
 
 // Valid user
-console.log(UserSchema.parse(user));
+console.log(UserSchema.safeParse(user));
 
 

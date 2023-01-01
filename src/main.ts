@@ -8,8 +8,8 @@ const UserSchema = z.object({
     salary: z.bigint().optional(),
     birthDate: z.date(),
     isAlive: z.boolean(),
-    test: z.undefined(),
-    test2: z.null(),
+    test: z.any(),
+    test2: z.void(),
 });
 
 type User = z.infer<typeof UserSchema>;
@@ -19,8 +19,8 @@ const validUser = {
     age: 99,
     birthDate: new Date(),
     isAlive: true,
-    test: undefined,
-    test2: null,
+    test: ['toto'],
+    test2: undefined,
 };
 
 

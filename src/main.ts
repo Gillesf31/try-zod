@@ -4,7 +4,7 @@ console.log('Hello world!');
 
 const UserSchema = z.object({
     username: z.string(),
-}).passthrough();
+}).strict();
 
 type User = z.infer<typeof UserSchema>;
 

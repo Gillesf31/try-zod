@@ -2,11 +2,9 @@ import { z } from "zod";
 
 console.log('Hello world!');
 
-type User = {
-    username: string;
-}
-
 const UserSchema = z.object({ username: z.string() });
+
+type User = z.infer<typeof UserSchema>;
 
 const validUser = { username: "Gilles"};
 const invalidUser = { username: 123};

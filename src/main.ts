@@ -34,7 +34,9 @@ const validUser = {
 
 
 // Valid user
-console.log(UserSchema.parse(validUser));
+console.log(UserSchema.shape);
+console.log(UserSchema.shape.username);
+console.log(UserSchema.partial().parse(validUser));
 
 
 

@@ -3,7 +3,7 @@ import {z} from "zod";
 console.log('Hello world!');
 
 const UserSchema = z.object({
-    id: z.union([z.string(), z.number(), z.boolean()]),
+    id: z.string().or(z.number()),
     username: z.string(),
     friends: z.array(z.string()).nonempty(),
     coords: z.tuple([z.number().gt(2).int(), z.string()]),

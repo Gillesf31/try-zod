@@ -2,24 +2,15 @@ import {z} from "zod";
 
 console.log('Hello world!');
 
-const UserSchema = z.object({
-    id: z.discriminatedUnion("status", [
-        z.object({ status: z.literal("success"), data: z.string() }),
-        z.object({ status: z.literal("failed"), data: z.instanceof(Error) }),
-    ])
-}).strict();
+const UserMap = z.record(z.string(), z.number());
 
-type User = z.infer<typeof UserSchema>;
-
-const validUser = {
-    id: {
-        status: "failed",
-        data: new Error('toto')
-    },
+const validUserMap = {
+    zdadazdazd: 12,
+    53: 12
 };
 
 // Valid user
-console.log(UserSchema.parse(validUser));
+console.log(UserMap.parse(validUserMap));
 
 
 

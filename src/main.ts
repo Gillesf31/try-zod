@@ -2,12 +2,12 @@ import {z} from "zod";
 
 console.log('Hello world!');
 
-const UserMap = z.set(z.number());
+const PromiseSchema = z.promise(z.string());
 
-const validUserMap = new Set([1, 1, 1, 2]);
+const promise = Promise.resolve('hello');
 
 // Valid user
-console.log(UserMap.parse(validUserMap));
+console.log(PromiseSchema.parse(promise));
 
 
 
